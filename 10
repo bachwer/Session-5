@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+    int num;
+    int num1;
+    int num3 = 1;
+    int num2;
+    int count = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    num1 = num;
+    int temp = num;
+
+
+    while (temp > 0) {
+        count++;
+        temp /= 10;
+    }
+
+    
+    for (int y = count - 1; y >= 0; y--) {
+        num3 = 1;
+
+
+        for (int z = 0; z < y; z++) {
+            num3 *= 10;
+        }
+
+    
+        num2 = num1 / num3;
+        printf("%d ", num2);
+        
+        num1 %= num3;
+    }
+    printf("\n");
+
+    return 0;
+}
